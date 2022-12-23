@@ -1,15 +1,15 @@
 import java.util.Arrays;
 
 public class SalesManager {
-    protected int[] sales;
+    protected long[] sales;
 
-    public SalesManager(int[] sales) {
+    public SalesManager(long[] sales) {
         this.sales = sales;
     }
 
-    public int max() {
-        int max = -1;
-        for (int sale : sales) {
+    public long max() {
+        long max = -1;
+        for (long sale : sales) {
             if (sale > max) {
                 max = sale;
             }
@@ -17,28 +17,28 @@ public class SalesManager {
         return max;
     }
 
-    public int trimmedMean() {
-        int[] sortedSales = sales.clone();
+    public long trimmedMean() {
+        long[] sortedSales = sales.clone();
         Arrays.sort(sortedSales);
 
-        int[] trimmedSortedSales = new int[sortedSales.length - 2];
+        long[] trimmedSortedSales = new long[sortedSales.length - 2];
         for (int i = 0; i < sortedSales.length - 2; i++) {
             trimmedSortedSales[i] = sortedSales[i + 1];
         }
 
 //        System.arraycopy(sortedSales, 1, trimmedSortedSales, 0, sortedSales.length - 2);
 
-        int sum = 0;
-        for (int sale : trimmedSortedSales) {
+        long sum = 0;
+        for (long sale : trimmedSortedSales) {
             sum += sale;
         }
 
         return sum / trimmedSortedSales.length;
     }
 
-    public int min() {
-        int min = sales[0];
-        for (int sale : sales) {
+    public long min() {
+        long min = sales[0];
+        for (long sale : sales) {
             if (sale < min) {
                 min = sale;
             }

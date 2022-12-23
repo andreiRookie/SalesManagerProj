@@ -9,13 +9,14 @@ public class Main {
         System.out.print(">>>");
 
         String[] input = scanner.nextLine().split(" ");
-        int[] salesCount = new int[input.length];
+        long[] salesCount = new long[input.length];
         for (int i = 0; i < input.length; i++) {
             salesCount[i] = Integer.parseInt(input[i]);
         }
 
         SalesManager newManager;
         newManager = new SalesManager(salesCount);
+
 
         System.out.println("newManager's week sales: " + Arrays.toString(newManager.sales));
         System.out.println("newManager's max sale is: " + newManager.max());
